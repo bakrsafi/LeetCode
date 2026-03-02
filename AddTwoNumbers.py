@@ -1,10 +1,7 @@
+# Add Two Numbers
+# the objective is to add two numbers represented as linked lists, where each node contains a single digit and the digits are stored in reverse order. The result should also be returned as a linked list in reverse order.
 
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-        
-        
+
 def build_list(arr):
     dummy = ListNode(0)
     current = dummy
@@ -13,6 +10,14 @@ def build_list(arr):
         current = current.next
     return dummy.next
 
+def convert_linkedlist_to_num(ll):
+    num = 0
+    multiplier = 1
+    while ll:
+        num += ll.val * multiplier
+        multiplier *= 10
+        ll = ll.next
+    return num
 
 #def convert_num_to_linkedlist(arr):
     
@@ -24,26 +29,12 @@ class Solution(object):
         :type l2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        carry = 0
-        while l1.val is not None and l2.val is not None:
-            ll=ListNode(0)
-            ll.val=l1.val+l2.val
-            if ll.val > 9:
-                ll=ll.next
-                ll.val=1
-            else:
-                ll=ll.next
-            l1=l1.next
-            l2=l2.next
+        l1 = convert_linkedlist_to_num(l1)
+        l2 = convert_linkedlist_to_num(l2)
+        arr =l1 + l2
+        #print(arr)
+        arr = list(map(int, str(arr)[::-1]))
+        #print(arr)
+        return build_list(arr)
             
-        print(ll)
         
-
-        
-        
-l1 = build_list([2,4,3])
-l2 = build_list([5,6,4])
-# 342 + 465 = 807   
-# Expected output: [7,0,8]
-solution = Solution()
-print(solution.addTwoNumbers(l1, l2))
