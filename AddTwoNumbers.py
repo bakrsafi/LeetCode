@@ -19,7 +19,7 @@ def convert_linkedlist_to_num(ll):
         ll = ll.next
     return num
 
-#def convert_num_to_linkedlist(arr):
+
     
 
 class Solution(object):
