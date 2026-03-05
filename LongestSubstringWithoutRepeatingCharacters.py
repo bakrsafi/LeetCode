@@ -1,3 +1,5 @@
+# this is my way not efficient but it works
+# it cuse two loops to check for the longest substring without repeating characters
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
@@ -17,6 +19,8 @@ class Solution(object):
                 max_length = len(arr)
         return max_length 
 
+# the way i learned 
+# it is using a sliding window technique with two pointers to keep track of the current substring without repeating characters
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
@@ -34,7 +38,3 @@ class Solution(object):
             max_length = max(max_length, right - left + 1)
         return max_length
 
-s = "pwwkew"
-#s = "abcabcbb"
-sol = Solution()
-sol.lengthOfLongestSubstring(s)
