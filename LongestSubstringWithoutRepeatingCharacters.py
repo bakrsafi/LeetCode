@@ -20,7 +20,7 @@ class Solution(object):
         return max_length 
 
 # the way i learned 
-# it is using a sliding window technique with two pointers to keep track of the current substring without repeating characters
+# it is using a sliding window technisue with two pointers to keep track of the current substring without repeating characters
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """

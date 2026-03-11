@@ -29,7 +29,7 @@ class Solution(object):
             
         return result
 
-# this is the optimized solution, it uses bit manipulation to speed up the process of finding the quotient
+# this is the optimized solution, it uses bit manipulation to speed up the process of finding the suotient
 # it works by shifting the divisor to the left until it is greater than the dividend, and then subtracting the shifted divisor from the dividend and adding the corresponding power of 2 to the result
 # more faster than the previous solution, but it is still not the best solution, as it still has a time complexity of O(log n)
 class Solution(object):
